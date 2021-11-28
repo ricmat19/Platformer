@@ -8,14 +8,22 @@ public class Player : MonoBehaviour
     [SerializeField]
     private float movement = 10f;
     [SerializeField]
-    private float attackForce = 11f;
+    private float attackForce = 10f;
+    [SerializeField]
+    private float jumpForce = 10f;
 
     private float movementX;
+    private bool attack;
+    private bool onGround;
     private Rigidbody2D myBody;
     private SpriteRenderer spriteRenderer;
     private Animator animator;
+
     private string Run_Animation = "Run";
     private string Attack_Animation = "Attack";
+    private string Hit_Animation = "Hit";
+
+    private string Ground_Tag = "Ground";
 
     
     // Awake is called immediately upon game initiallizaton
@@ -40,6 +48,10 @@ public class Player : MonoBehaviour
         PlayerAttack();
     }
 
+    private void FixedUpdate(){
+        PlayerJump();
+    }
+
     void AnimatePlayer(){
         //Triggers the player's Run animation
         if(movementX >  0){
@@ -56,6 +68,7 @@ public class Player : MonoBehaviour
     }
 
     void PlayerRun(){
+        // animator.SetBool(Hit_Animation, false);
         //Checks if moving left (-1) or right (1)
         movementX = Input.GetAxisRaw("Horizontal");
         //Moves the player left and right
@@ -63,10 +76,33 @@ public class Player : MonoBehaviour
     }
 
     void PlayerAttack(){
-        if(Input.GetButtonDown("Jump")){
+        // animator.SetBool(Hit_Animation, false);
+        if(Input.GetButton("Fire1")){
             animator.SetBool(Attack_Animation, true);
         }else{
             animator.SetBool(Attack_Animation, false);
         }
     }
+
+    void PlayerJump(){
+        // animator.SetBool(Hit_Animation, false);
+        if(Input.GetButtonDown("Jump") && onGround){
+            onGround = false;
+            myBody.AddForce(new Vector2(0f, jumpForce), ForceMode2D.Impulse);
+        }
+    }
+
+    //Checks fo a Collision between the class object and another asset
+    private void OnCollisionEnter2D(Collision2D collision){
+        //Checks is the player has collided with the ground
+        if(collision.gameObject.CompareTag(Ground_Tag)){
+            onGround = true;
+        }
+
+        //Checks if the player has collided with something other than the ground
+        if(!collision.gameObject.CompareTag(Ground_Tag)){
+            animator.SetBool(Hit_Animation, true);
+        }
+    }
+
 }

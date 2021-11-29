@@ -10,11 +10,9 @@
 [Ll]ogs/
 [Mm]emoryCaptures/
 
-[Pp]ixel Adventure 2/
-[Ss]unny Land Forest Assets/
-[Ss]ampleScenes/
-[Ss]ounds
-[Ss]tandard Assets/
+[Ss]ounds/
+[Cc]haracters/
+[Bb]ackgrounds/
 
 # Asset meta data should only be ignored when the corresponding asset is also ignored
 ![Aa]ssets/**/*.meta

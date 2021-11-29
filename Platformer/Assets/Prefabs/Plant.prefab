@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 310273890123086887}
   - component: {fileID: 2841511896395636636}
   - component: {fileID: 4543695689151028389}
+  - component: {fileID: 583207927}
   m_Layer: 0
   m_Name: Plant
   m_TagString: Untagged
@@ -151,3 +152,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &583207927
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3453357411173386495}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ee4e18e46a1f689499ccf456f714c786, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: 10
+  attackForce: 10
+  hit: 10

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 8853500483246609437}
   - component: {fileID: 8036867119868184253}
   - component: {fileID: 8040184955278016845}
+  - component: {fileID: 949682132}
   m_Layer: 0
   m_Name: Rock
   m_TagString: Untagged
@@ -151,3 +152,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &949682132
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5429839473707051720}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 16cd8bd3dde740e4aa64c814494dfc11, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: 10
+  attackForce: 10
+  hit: 10

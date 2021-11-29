@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 294037590571911832}
   - component: {fileID: 6167148210615084573}
   - component: {fileID: 4854135245368457968}
+  - component: {fileID: 1014301089}
   m_Layer: 0
   m_Name: Blob
   m_TagString: Untagged
@@ -151,3 +152,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1014301089
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6893922499374776050}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6ba78bce6fabc924e9ecd31c9fdfb025, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: 10
+  attackForce: 10
+  hit: 10

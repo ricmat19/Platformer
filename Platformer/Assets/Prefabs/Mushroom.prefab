@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 407215571991884031}
   - component: {fileID: 7484271094634685660}
   - component: {fileID: 1024928413086637382}
+  - component: {fileID: 1286967439}
   m_Layer: 0
   m_Name: Mushroom
   m_TagString: Untagged
@@ -151,3 +152,18 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1286967439
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5925363119954347879}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19f0318beb69c2b4a8f91e017d090d6d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  movement: 10
+  attackForce: 10
+  hit: 10

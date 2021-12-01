@@ -5,8 +5,8 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
 
-    [SerializeField]
-    private float movement = 10f;
+    [HideInInspector]
+    public float movement;
     [SerializeField]
     private float attackForce = 10f;
     [SerializeField]
@@ -29,8 +29,8 @@ public class Enemy : MonoBehaviour
     void Awake()
     {
         myBody = GetComponent<Rigidbody2D>();
-        animator = GetComponent<Animator>();
-        spriteRenderer = GetComponent<SpriteRenderer>();
+        // animator = GetComponent<Animator>();
+        // spriteRenderer = GetComponent<SpriteRenderer>();
     }
 
     // Start is called before the first frame update
@@ -42,10 +42,14 @@ public class Enemy : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        AnimateEnemy();
-        EnemyRun();
-        EnemyAttack();
-        EnemyHit();
+        // AnimateEnemy();
+        // EnemyRun();
+        // EnemyAttack();
+        // EnemyHit();
+    }
+
+    void FixedUpdate(){
+        myBody.velocity = new Vector2(movement, myBody.velocity.y);
     }
 
     void AnimateEnemy(){
@@ -80,12 +84,13 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    void EnemyHit(){
+    // void EnemyHit(){
 
-    }
+    // }
 
     //Checks fo a Collision between the class object and another asset
     private void OnCollisionEnter2D(Collision2D collision){
+        Debug.Log(collision.gameObject);
         //Checks if the player has collided with something other than the ground
         if(!collision.gameObject.CompareTag(Ground_Tag)){
             animator.SetBool(Hit_Animation, true);

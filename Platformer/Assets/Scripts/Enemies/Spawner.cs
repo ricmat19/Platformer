@@ -23,19 +23,26 @@ public class Spawner : MonoBehaviour
     }
 
     IEnumerator SpawnEnemies(){
-        yield return new WaitForSeconds(Random.Range(1, 5));
 
-        randomIndex = Random.Range(0, enemyReference.Length);
-        randomSide = Random.Range(0, 2);
+        while(true){
+            yield return new WaitForSeconds(Random.Range(1, 5));
 
-        spawnedEnemies = Instantiate(enemyReference[randomIndex]);
+            randomIndex = Random.Range(0, enemyReference.Length);
+            Debug.Log(randomIndex);
+            randomSide = Random.Range(0, 2);
 
-        if(randomSide == 0){
-            spawnedEnemies.transform.position = leftPos.position;
-            spawnedEnemies.GetComponent<Enemy>().movement = Random.Range(4, 10);
-        }else{
-            spawnedEnemies.transform.position = rightPos.position;
+            spawnedEnemies = Instantiate(enemyReference[randomIndex]);
+
+            if(randomSide == 0){
+                spawnedEnemies.transform.position = leftPos.position;
+                spawnedEnemies.GetComponent<Enemy>().movement = Random.Range(4, 10);
+                spawnedEnemies.transform.localScale = new Vector3(-5f, 5f, 1f);
+            }else{
+                spawnedEnemies.transform.position = rightPos.position;
+                spawnedEnemies.GetComponent<Enemy>().movement = -Random.Range(4, 10);
+            }
         }
+      
     }
 
     // Update is called once per frame

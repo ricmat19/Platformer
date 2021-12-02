@@ -24,6 +24,7 @@ public class Player : MonoBehaviour
     private string Hit_Animation = "Hit";
 
     private string Ground_Tag = "Ground";
+    private string Enemy_Tag = "Enemy";
 
     
     // Awake is called immediately upon game initiallizaton
@@ -103,6 +104,7 @@ public class Player : MonoBehaviour
         if(!collision.gameObject.CompareTag(Ground_Tag)){
             animator.SetBool(Hit_Animation, true);
         }
+
     }
 
 }

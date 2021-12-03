@@ -88,12 +88,12 @@ public class Enemy : MonoBehaviour
 
     // }
 
-    //Checks fo a Collision between the class object and another asset
-    private void OnCollisionEnter2D(Collision2D collision){
-        Debug.Log(collision.gameObject);
-        //Checks if the player has collided with something other than the ground
-        if(!collision.gameObject.CompareTag(Ground_Tag)){
-            animator.SetBool(Hit_Animation, true);
-        }
-    }
+    // //Checks fo a Collision between the class object and another asset
+    // private void OnCollisionEnter2D(Collision2D collision){
+
+    //     //Checks if the player has collided with something other than the ground
+    //     if(!collision.gameObject.CompareTag(Ground_Tag)){
+    //         animator.SetBool(Hit_Animation, true);
+    //     }
+    // }
 }

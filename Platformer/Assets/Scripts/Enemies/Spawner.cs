@@ -28,7 +28,6 @@ public class Spawner : MonoBehaviour
             yield return new WaitForSeconds(Random.Range(1, 5));
 
             randomIndex = Random.Range(0, enemyReference.Length);
-            Debug.Log(randomIndex);
             randomSide = Random.Range(0, 2);
 
             spawnedEnemies = Instantiate(enemyReference[randomIndex]);

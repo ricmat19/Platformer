@@ -100,9 +100,9 @@ public class Player : MonoBehaviour
             onGround = true;
         }
 
-        //Checks if the player has collided with something other than the ground
-        if(!collision.gameObject.CompareTag(Ground_Tag)){
-            animator.SetBool(Hit_Animation, true);
+        //Checks if the player has collided with an enemy
+        if(collision.gameObject.CompareTag(Enemy_Tag)){
+            Destroy(gameObject);
         }
 
     }

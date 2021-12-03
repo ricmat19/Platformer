@@ -14,9 +14,9 @@ GameObject:
   - component: {fileID: 846081118607118556}
   - component: {fileID: 4322727053623267413}
   - component: {fileID: 216019853}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Pig
-  m_TagString: Untagged
+  m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
